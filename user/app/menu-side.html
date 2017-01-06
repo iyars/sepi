@@ -1,0 +1,29 @@
+<aside class="sidebar fixed">
+    <div class="brand-logo grey lighten-3">
+        <div id="logo">
+            <img src="assets/img/sipsco-logo.png" alt="SIPSCO" class="img-responsive">
+        </div>
+    </div>
+    <div class="user-logged-in p-20">
+        <div class="content">
+            <div class="user-name">Johnny Appleseed</div>
+            <div class="user-email">jappleseed@sepi.com</div>
+        </div>
+    </div>
+    <ul class="menu-links" ng-cloak>
+        <a menu-link href="#/dashboard/bienvenida" icon="md md-blur-on">Dashboard</a>
+        <li menu-toggle path="/Registro" name="Registro" icon="md md-assignment-ind">
+            <a  menu-link href="#/registro-aspirantes/registro-datos"><i class="md md-account-box"></i>Datos personales <i class="md md-done"></i></a>
+            <a  menu-link href="#/registro-aspirantes/registro-estudios"><i class="md md-school"></i>Estudios <i class="md md-done"></i></a>
+            <a  menu-link href="#/registro-aspirantes/registro-documentos"><i class="md md-description"></i>Documentos y disponibilidad</a>
+            <a  menu-link href="#/registro-aspirantes/registro-areas-experiencia"><i class="md md-list"></i>Áreas de experiencia</a>
+            <a  menu-link href="#/registro-aspirantes/registro-habilidades"><i class="md md-stars"></i>Habilidades</a>
+            <a  menu-link href="#/registro-aspirantes/registro-experiencia-laboral"><i class="md md-work"></i>Experiencia laboral</a>
+        </li>
+        <li menu-toggle path="/Exámen" name="Exámen" icon="md md-assignment-ind">
+            <a  menu-link href="#/examen/excoga-iniciar"><i class="md md-account-box"></i>Instrucciones</a>
+            <a  menu-link href="#/examen/excoga-presentar"><i class="md md-school"></i>Presentar exámen</a>
+        </li>
+        <a menu-link href="#/vacantes/vacantes-personales" icon="md md-dashboard">Mis vacantes</a>
+    </ul>
+</aside>

@@ -1,0 +1,100 @@
+<section class="p-b-20">
+    <div class="page-header">
+        <h1>
+            <i class="md md-insert-chart"></i> Evaluación en línea
+        </h1>
+        <p class="lead">Lea con atención cada uno de los reactivos y seleccione una respuesta</p>
+    </div>
+    <div class="forms-advanced row m-b-40" id="datepickers">
+        <div class="col-md-3 col-md-push-9">
+            <div class="well white">
+                <address>
+                    <strong>Nombre Apellido Apellido </strong>
+                    <br/><strong>CURP:</strong>CURP 1
+                    <br/><strong>Perfil:</strong>Perfil 1
+                    <br/><strong>Operativo</strong>Operativo 1
+                    <br/><strong>Estado:</strong>Estado 1
+                    <br/><strong>Municipio:</strong>Municipio 1
+                </address>
+                <div>
+                    <legend>Tiempo restante</legend>
+                    <div class="card grey lighten-4">
+                        <div class="card-content">
+                            <p class="balance-ponderacion p-15 text-center">
+                                <timer>
+                                    11:22:33
+                                </timer>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-action clearfix text-center">
+                    <div class="row checkbox-inline">
+                        <label>
+                            <input type="checkbox"> Estoy seguro de haber terminado
+                        </label>
+                    </div>
+                    <div class="ro p-t-15">
+                        <button type="submit" class="btn btn-primary">Terminar examen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-md-pull-3">
+            <div class="card bordered">
+                <div>
+                    <div class="card-header">
+                        <span class="card-title">Pregunta</span>
+                    </div>
+                    <div class="card-content">
+                        <form>
+                            <fieldset>
+                                <div class="form-group">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="name" value="1"> Respuesta 1
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="name" value="1"> Respuesta 2
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="name" value="1"> Respuesta 3
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="card-action clearfix">
+                    <div>
+                        <ul class="pager">
+                            <li>
+                                <button type="button" class="btn btn-default btn-flat-border pull-left grey lighten-2">Pregunta anterior</button>
+                                <button type="button" class="btn btn-default btn-flat-border pull-right grey lighten-2">Pregunta siguiente</button>
+                            </li>
+                            <li>
+                                <div class="col-md-3 col-md-push-2 col-xs-3 col-xs-push-2 col-lg-push-3 text-center">
+                                    <div class="col-sm-6 text-right">
+                                        <input type="number" class="form-control" min="1" max="30" />
+                                    </div>
+                                    <div class="col-sm-6 text-left">
+                                        <span class="pager-number">de 30</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="progress progress-striped active text-center">
+                        <div class="progress-bar progress-bar-info" style="width: 30%;"></div>
+                    </div>
+                    <div class="text-center">Progreso: 29 respuestas faltantes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

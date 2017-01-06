@@ -1,0 +1,107 @@
+<section class="p-b-20">
+    <div class="page-header">
+        <h1>
+              <i class="md md-insert-chart"></i> Experiencia laboral
+            </h1>
+        <p class="lead">TODOS los campos son obligatorios</p>
+
+
+    </div>
+    <div class="forms-advanced row m-b-40">
+        <div class="col-md-12">
+            <div class="col-md-4">
+                <div class="well white">
+                    <form name="form-exp-laboral" novalidate="novalidate" class="form-floating" ng-submit="expLabCtrl.addExperiencias()">
+                        <fieldset>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" ng-model="expLabCtrl.desactivarexpLaboral"> Sin experiencia
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group filled">
+                                <label class="control-label">Sector</label>
+
+                            <select name="expeSector" id="expeSector" class="form-control" ng-model="expLabCtrl.expeSector" ng-disabled="expLabCtrl.desactivarexpLaboral" ng-options="sector as sector.descSector for sector in expLabCtrl.sectores"
+                            required="required">
+                                <option value="">Seleciona una Opcion</option>}
+                                option
+                            </select>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="empresa" class="control-label">Dependencia / Empresa</label>
+                                <input name="empresa" id="empresa" class="form-control" type="text" ng-model="expLabCtrl.expeEmpresa" ng-disabled="expLabCtrl.desactivarexpLaboral" ng-class="{'has-error': !form-exp-laboral.empresa.vali}" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="evento" class="control-label">Proyecto / Evento</label>
+                                <input class="form-control" type="text" ng-model="expLabCtrl.expeProyecto" ng-disabled="expLabCtrl.desactivarexpLaboral" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="puesto" class="control-label">Puesto</label>
+                                <input class="form-control" type="text" ng-model="expLabCtrl.expePuesto" ng-disabled="expLabCtrl.desactivarexpLaboral" required="required">
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" data-max-date="{{expLabCtrl.maxExpeFecha2 || expLabCtrl.ayer}}" placeholder="Desde" bs-datepicker ng-model="expLabCtrl.expeFecha1" ng-disabled="expLabCtrl.desactivarexpLaboral" required="required">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" data-max-date="{{expLabCtrl.hoy}}" placeholder="Hasta" bs-datepicker ng-model="expLabCtrl.expeFecha2" ng-disabled="expLabCtrl.desactivarexpLaboral" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-default" ng-click="expLabCtrl.limpiar()">Limpiar</button>
+                                <button type="submit" value="add" class="btn btn-primary" ng-disabled="expLabCtrl.desactivarexpLaboral" ">Agregar</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="well white">
+                    <div class="datatables">
+                        <lista experiencias-list="expLabCtrl.experienciasList"></lista>
+                    </div>
+                    <div class="form-group p-t-20 text-right" ng-cloak>
+                        <a href="#/registro/registro-habilidades-informaticas"><button type="reset" class="btn btn-default">Anterior</button></a>
+                        <button type="submit" class="btn btn-primary" ng-click="expLabCtrl.guardar()">Terminar registro</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ng-options="sector.descSector as sector.descSector for sector in expLabCtrl.sectores track by sector.idSector"-->
+
+
+
+
+<!--
+
+    <table class="table table-full table-full-small" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th class="text-center">Sector</th>
+                <th class="text-center">Dependencia / Empresa</th>
+                <th class="text-center">Proyecto / Evento</th>
+                <th class="text-center">Puesto</th>
+                <th class="text-center">Tiempo en el puesto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="expList in expLabCtrl.experienciasList">
+                <td class="text-center">{{ expList.sector.descSector }}</td>
+                <td class="text-center">{{ expList.empresa }}</td>
+                <td class="text-center">{{ expList.proyecto }}</td>
+                <td class="text-center">{{ expList.puesto }}</td>
+                <td class="text-center">{{ expList.fecha }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+-->

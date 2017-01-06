@@ -1,0 +1,108 @@
+<section class="p-b-20" >
+    <div class="page-header">
+        <h1>
+              <i class="md md-insert-chart"></i> Estudios el id es: {{re.id}}
+            </h1>
+        <p class="lead">TODOS los campos son obligatorios</p>
+    </div>
+    <div class="forms-advanced row m-b-40">
+        <div class="col-md-12">
+            <div class="col-md-4">
+                <div class="well white">
+                    <form class="form-floating" name="formularioEstudios" ng-submit="re.agregarEstudios()" novalidate="novalidate">
+                        <fieldset>
+                            <div class="form-group filled">
+                                <label class="control-label" for="nivelMaximo">Nivel de estudios</label>
+                                <select  class="form-control" id="nivelMaximo" name="nivelMaximo" ng-model="re.nivelMaximo" required="required">
+                                    <option value="">Selecciona</option>
+                                    <option ng-repeat="nivel in re.nivelEstudiosCat | orderBy : '-idNivelEst'" ng-click="re.id(1)" value="{{nivel.idNivelEst}}{{nivel.descNivelEst}}" 
+                                   >{{ nivel.descNivelEst | uppercase }}</option>
+                                </select>
+                            </div>
+                            <div class="form-group filled">
+                                <label class="control-label" for="aniosConcluidos">Años concluidos</label>
+                                <select class="form-control" id="aniosConcluidos" name="aniosConcluidos"  
+                                ng-model="re.aniosConcluidos"   required="required" >
+                                    <option value="" >Selecciona</option>
+                                    <option value="1" > 1 AÑO</option>
+                                    <option value="2"> 2 AÑOS</option>
+                                    <option value="3"> 3 AÑOS</option>
+                                    <option value="4"> 4 AÑOS</option>
+                                    <option value="5"> 5 AÑOS</option>
+                                    <option value="6"> 6 AÑOS</option>
+                                    <option value="7"> 7 AÑOS</option>
+                                    <option value="8"> 8 AÑOS</option>
+                                    <option value="9"> 9 AÑOS</option>
+                                    <option value="10"> 10 AÑOS</option>
+                                </select>
+                            </div>
+                            <div class="form-group" ng-disabled="expression">
+                                <label for="carrera" class="control-label">Carrera</label>
+                                <input class="form-control" type="text" name="carrera" id="carrera" ng-model="re.carrera" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" required="required" >
+                            </div>
+                            <div class="form-group filled">
+                                <label class="control-label" for="carreraGenerica">Carrera genérica</label>
+                                <select class="form-control" id="carreraGenerica" name="carreraGenerica"  
+                                ng-model="re.carreraGenerica"   required="required" >
+                                    <option value="">Selecciona</option>
+                                    <option ng-repeat="carreraG in re.carreraGenericaCat" value="{{carreraG.idCarreraGen}}{{carreraG.descCarrera}}">{{ carreraG.descCarrera| uppercase }}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label normal" for="titulado">Estoy titulado</label>
+                                <div class="radio-inline">
+                                    <label class="filled">
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="Si"  ng-model="re.titulo"> Si </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label class="filled">
+                                        <input type="radio"  name="optionsRadios" id="optionsRadios1" value="No"  ng-model="re.titulo" checked="true"> No </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-default" value="Limpiar">
+                                <input type="submit" class="btn btn-primary" value="Agregar" >
+
+                                <input type="submit" class="btn btn-primary" value="Agregar" 
+                                ng-show="re.carreraGenerica != null && re.aniosConcluidos != null && re.nivelMaximo !=null && carrera2 != null " 
+                                ng-click="re.agregarEstudios()">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="well white">
+                    <div class="datatables">
+                        <table class="table table-full table-full-small" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Nivel de estudios</th>
+                                    <th class="text-center">Carrera</th>
+                                    <th class="text-center">Grado de avance</th>
+                                    <th class="text-center">Titulado</th>
+                                    <th class="text-center">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="expList in re.estudiosLista">
+                                    <td class="text-center">{{expList.nivelEstudio}}</td>
+                                    <td class="text-center">{{expList.carrera}}</td>
+                                    <td class="text-center">{{expList.anios}}</td>
+                                    <td class="text-center">{{expList.titulado}}</td>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-danger" data-placement="bottom" bs-tooltip="" title="Eliminar"><i class="md md-delete"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="form-group p-t-20 text-right" ng-cloak>
+                        <!--<a href="#/registro/registro-datos">--><button  class="btn btn-default">Anterior</button></a>
+                        <!--<a ui-sref="app.resgistro-documentos">--><button type="submit" class="btn btn-primary"  ng-click="re.guardar()">Siguiente</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

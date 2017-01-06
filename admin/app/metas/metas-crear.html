@@ -1,0 +1,90 @@
+<section class="p-b-20">
+    <div class="page-header">
+        <h1><i class="md md-insert-chart"></i> Alta de meta para Nombre Apellido Apellido</h1>
+    </div>
+    <div class="forms-advanced row m-b-40">
+        <div class="col-md-3 col-md-push-9">
+            <h5>Creación de una meta</h5>
+            <p>Para crear una meta todos los campos son obligatorios. </p>
+            <p>Describir en una oración la meta o actividad a evaluar. Dicha oración debe iniciar con un verbo infinitivo. La meta o actividad idealmente debe estar alineada con la funciones del puesto y corresponder a la cuantificación de los objetivos a alcanzar por el empleado en un tiempo determinado.</p>
+            <h5>Descripción general de la evidencia de desempeño</h5>
+            <p>Describir las características (formato, tipo de archivo, amplitud) generales de la evidencia de desempeño de la meta o actividad. Deben describirse las características tanto cuantitativas como cualitativas del producto (tipo de formato, material, calidad, cantidad)</p>
+            <h5>Definición del rasgo</h5>
+            <p>Definir una o más características (rasgos) con los que se evaluará el producto o entregable. Para ello se debe definir un concepto o una descripción más amplia en forma de oración</p>
+            <h5>Ponderación de rasgo</h5>
+            <p>Asignar valor porcentual a cada rasgo definido (la suma total de los valores porcentuales de cada rasgo tendrá que sumar el  100%)</p>
+        </div>
+        <div class="col-md-9 col-md-pull-3">
+            <div class="well white">
+                <form class="form-floating">
+                    <fieldset>
+                        <legend>Crear una meta</legend>
+                        <div class="form-group">
+                            <label for="metaDescrpcion" class="control-label">Descripción de la meta o actividad desempeñada</label>
+                            <textarea class="form-control" id="textArea"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="metaDescripcionGeneral" class="control-label">Descripción general de la evidencia de desempeño</label>
+                            <textarea class="form-control vertical" rows="1" id="metaDescripcionGeneral"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="metaObjetivosPat" class="control-label">Objetivos del Programa Anual de Trabajo  (PAT) a los que se alinea la meta (850 caracteres)</label>
+                            <textarea class="form-control vertical" rows="1" id="metaObjetivosPat"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="metaObjetivosProedi" class="control-label">Objetivos del Programa Estratégico de Desarrollo Institucional (PROEDI) a los que se alinea la meta (850 caracteres)</label>
+                            <textarea class="form-control vertical" rows="2" id="metaObjetivosProedi"></textarea>
+                        </div>
+                        <legend>Definición del Rasgo</legend>
+                        <div class="form-group">
+                            <label for="mataRasgo" class="control-label">Rasgo</label>
+                            <textarea class="form-control" id="mataRasgo"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-border">Agregar rasgo</button>
+                        <div class="row p-t-20">
+                            <div class="col-sm-9">
+                                <table class="table table-hover table-full table-full-small">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Rasgo</th>
+                                            <th class="text-center">Ponderación</th>
+                                            <th class="text-center">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Vivamus quis imperdiet ex. Nam rutrum mollis laoreet. Sed ac est libero. Fusce tincidunt feugiat urna eget gravida. Sed volutpat ut lacus sed lacinia. Nunc sit amet odio vulputate, consequat eros eget, pulvinar lorem. Mauris nibh augue, vestibulum sed justo at, sagittis condimentum diam. </td>
+                                            <td class="text-center">
+                                                <div class="form-group">
+                                                    <input class="form-control" type="number">
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <button class="btn btn-sm btn-info btn-flat-border" data-placement="bottom" title="Editar"><i class="md md-edit"></i></button>
+                                                <button class="btn btn-sm btn-danger btn-flat-border" data-placement="bottom" title="Eliminar"><i class="md md-cancel"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-sm-3">
+                                <div>
+                                    <legend>Balance de  ponderación</legend>
+                                    <div class="card blue inee">
+                                        <div class="card-content">
+                                            <p class="balance-ponderacion-tabla text-center">98%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="form-group pull-right">
+                                <a href="#/metas/metas-seleccionar"><button type="submit" class="btn btn-primary">Guardar meta</button></a>
+                                <a href="#/metas/metas-seleccionar"><button type="submit" class="btn btn-default">Cancelar</button></a>
+                            </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

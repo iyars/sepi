@@ -1,0 +1,49 @@
+<div class="container" ng-controller="registro-Prin.Ctrl as regAsp">
+     <h4 class="text-info">Instrucciones:</h4>
+     <p class="text-info">1.  Selecciona de la lista la entidad federativa en la que deseas participar, asegúrate que los datos de CURP o NUE (en caso de ser extranjero) sean correctos.<br>
+     2. Por cuestiones de seguridad, es necesario que captures los caracteres de la imagen. <br>
+     3. Es recomendable que tengas a la mano los documentos referentes a tus estudios y experiencia laboral, ya que serán solicitados durante el registro. </p>
+     <div class="form-horizontal panel panel-primary">
+          <div class="panel-heading">
+               <h5><b>INSCRIPCIÓN ASPIRANTES</b></h5>
+          </div>
+          <br>
+          <form  name="formulario" ng-submit="click(formulario.$valid )" novalidate="novalidate">
+
+               <div class="form-group">                     
+                    <label  class="col-lg-2 control-label" for="entidad">Entidad</label>
+                    <div class="col-sm-10">
+                         <select class="form-control" id="entidad" name="entidad"  ng-model="regAsp.formData.entidad" required="required">
+                              <option value="">Seleccione una opción...</option>
+                              <option ng-repeat="estado in regAsp.estados ">{{estado.nombre | uppercase}}</option>         
+                         </select>
+                    </div>
+               </div> 
+               <div class="form-group">
+                    <label  class="col-lg-2 control-label">Soy extranjero</label>
+                    <div class="col-sm-10">
+                         <input type="text" class="form-control" id="curp" name="curp" ng-maxlength="18" ng-minlength="18" ng-model="formData.regAsp.curp" maxlength="18" required="required" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
+                    </div>
+               </div>
+               <div class="form-group">
+                    <label  class="col-lg-2 control-label" for="nue"> NUE *</label>
+                    <div class="col-sm-10">
+                         <input type="number" class="form-control" id="nue" name="nue" min="13" max="13" ng-model="formData.regAsp.nue" maxlength="13" required="required">
+                    </div>
+               </div>
+               <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                         <p><h6>En caso de no conocer tu CURP,<br>
+                         puedes consultarla haciendo clic<a href="http://consultas.curp.gob.mx/CurpSP/"> aquí</a></h6></p>
+                    </div>
+               </div>
+               <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary btn-sm">Continuar</button>
+                     </div>
+               </div>
+          </form>
+     </div>
+     <br>
+     <p >Recupera tu folio</p>
+</div>

@@ -1,0 +1,96 @@
+<div class="dashboard grey lighten-3" ng-controller="DashboardController">
+    <div class="row no-gutter">
+        <div class="col-sm-12 col-md-12 col-lg-9" style="background:#F9F9F9;">
+            <div class="p-20 clearfix">
+                <h4 class="grey-text">
+          <i class="md md-dashboard"></i>
+          <span class="hidden-xs">Dashboard</span>
+        </h4>
+            </div>
+            <div class="p-20 no-p-t">
+                <div class="row gutter-14">
+                    <div class="col-md-12">
+                        <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title">The last 5 new customers</div>
+                                    <div class="small grey-text">Overview of the last customers and customers per day</div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-full table-full-small table-dashboard-widget-1">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Last</th>
+                                                <th>Summary</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Abbey</td>
+                                                <td>Don Johnson</td>
+                                                <td>Fuisset delicatissimi duo, qui ut animal noluisse erroribus.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Alex</td>
+                                                <td>Nel Nelson</td>
+                                                <td>Ea eum veniam audire. Dicant vituperata consequuntur.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-12">
+            <div class="p-h-40">
+                <h4 class="grey-text m-b-30 m-t-20">Action feed</h4>
+                <div role="tabpanel">
+                    <ul class="nav nav-tabs" role="tablist" ng-init="actionTab=1">
+                        <li role="presentation" class="active"><a ng-click="actionTab=1" aria-controls="home" role="tab" data-toggle="tab">Tab 1</a></li>
+                        <li role="presentation" class=""><a ng-click="actionTab=2" aria-controls="home" role="tab" data-toggle="tab">Tab 2</a></li>
+                    </ul>
+                    <div class="tab-content m-t-10">
+                        <div role="tabpanel" class="tab-pane" ng-class="{active: actionTab==1}">
+                            <ul class="timeline">
+                                <li>
+                                    <div class="timeline-badge">
+                                        <i class="icon-circle theme-border"></i>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Item</h4>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>Item Detail</p>
+                                            <small class="text-muted"><i class="md md-timer"></i> Time ago</small>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" ng-class="{active: actionTab==2}">
+                            <ul class="timeline">
+                                <li>
+                                    <div class="timeline-badge">
+                                        <i class="icon-circle theme-border"></i>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Item 2</h4>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>Item Detail 2</p>
+                                            <small class="text-muted"><i class="md md-timer"></i> Time ago 2</small>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

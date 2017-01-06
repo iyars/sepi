@@ -1,0 +1,149 @@
+<section class="p-b-20">
+    <div class="page-header">
+        <h1><i class="md md-insert-chart"></i> Vacantes registradas</h1>
+        <p class="lead">A continuación se muestra el listado de hasta 5 vacantes registradas en las que te has postulado</p>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="well white">
+                <form class="form-floating">
+                    <fieldset>
+                        <legend>Buscar por...</legend>
+                        <div class="form-group filled">
+                            <label class="control-label">Estado</label>
+                            <select class="form-control">
+                                <option value="0">Selecciona</option>
+                                <option value="1">Estado 1</option>
+                                <option value="2">Estado 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group filled p-b-10">
+                            <label class="control-label">Municipio</label>
+                            <select class="form-control">
+                                <option value="0">Selecciona</option>
+                                <option value="1">Municipio 1</option>
+                                <option value="2">Municipio 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group filled">
+                            <label class="control-label">Operativo</label>
+                            <select class="form-control">
+                                <option value="0">Selecciona</option>
+                                <option value="1">Operativo 1</option>
+                                <option value="2">Operativo 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group filled p-b-10">
+                            <label class="control-label">Puesto</label>
+                            <select class="form-control">
+                                <option value="0">Selecciona</option>
+                                <option value="1">Puesto 1</option>
+                                <option value="2">Puesto 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group filled">
+                            <label class="control-label">Perfil</label>
+                            <select class="form-control">
+                                <option value="2016">Selecciona</option>
+                                <option value="2015">Perfil 1</option>
+                                <option value="2015">Perfil 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default">Limpiar</button>
+                            <button type="submit" class="btn btn-primary">Buscar</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="well white">
+                <form class="form-floating">
+                    <fieldset>
+                        <div class="table-responsive white">
+                            <table class="table table-hover table-full table-full-small">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">ID</th>
+                                        <th class="text-center">Estado</th>
+                                        <th class="text-center">Municipio</th>
+                                        <th class="text-center">Operativo</th>
+                                        <th class="text-center">Puesto</th>
+                                        <th class="text-center">Detalles</th>
+                                        <th class="text-center">Postular</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td type="text" class="text-center">1</td>
+                                        <td class="text-center">Estado 1</td>
+                                        <td class="text-center">Municipio 1</td>
+                                        <td class="text-center">Operativo 1</td>
+                                        <td class="text-center">Puesto 1</td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-xs btn-info" data-animation="am-fade-and-slide-top" data-template-url="app/vacantes/detalles-perfil.html" bs-modal="modal">
+                                                Perfil
+                                            </button>
+                                            <button type="button" class="btn btn-xs btn-success" data-animation="am-fade-and-slide-top" data-template-url="app/vacantes/detalles-operativo.html" bs-modal="modal">
+                                                Operativo
+                                            </button>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="switch">
+                                                <label class="filled">
+                                                    <input type="checkbox">
+                                                    <span class="lever"></span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-action clearfix p-t-15">
+                            <div class="pull-right">
+                                <button type="submit" class="btn btn-sm btn-border btn-success">Limpiar tabla</button>
+                                <button type="submit" class="btn btn-primary">Guardar evaluación</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row m-b-40">
+        <div class="well white">
+            <div class="table-responsive white">
+                <table class="table table-hover table-full table-full-small">
+                    <thead>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <th class="text-center">Estado</th>
+                            <th class="text-center">Municipio</th>
+                            <th class="text-center">Operativo</th>
+                            <th class="text-center">Puesto</th>
+                            <th class="text-center">Estatus</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">{{ vacantesLista.idVacante }}</td>
+                            <td class="text-center">{{ vacantesLista.estado }}</td>
+                            <td class="text-center">{{ vacantesLista.municipio }}</td>
+                            <td class="text-center">{{ vacantesLista.operativo }}</td>
+                            <td class="text-center">{{ vacantesLista.puesto }}</td>
+                            <td class="text-center"><span class="label green">Aprobada</span></td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-info" data-animation="am-fade-and-slide-top" data-template-url="app/vacantes/detalles-perfil.html" bs-modal="modal"><i class="md md-assignment-ind"></i></button>
+                                <button class="btn btn-sm btn-success" data-animation="am-fade-and-slide-top" data-template-url="app/vacantes/detalles-operativo.html" bs-modal="modal"><i class="md md-assignment"></i></button>
+                                <button class="btn btn-sm btn-danger btn-flat-border" data-placement="bottom" bs-tooltip="" title="Eliminar"><i class="md md-cancel"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,20 @@
+<table class="table table-full table-full-small" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th class="text-center">Sector</th>
+            <th class="text-center">Dependencia / Empresa</th>
+            <th class="text-center">Proyecto / Evento</th>
+            <th class="text-center">Puesto</th>
+            <th class="text-center">Tiempo en el puesto</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="expList in $ctrl.experienciasList">
+            <td class="text-center">{{ expList.sector.descSector }}</td>
+            <td class="text-center">{{ expList.empresa }}</td>
+            <td class="text-center">{{ expList.proyecto }}</td>
+            <td class="text-center">{{ expList.puesto }}</td>
+            <td class="text-center">{{ expList.fecha }}</td>
+        </tr>
+    </tbody>
+</table>

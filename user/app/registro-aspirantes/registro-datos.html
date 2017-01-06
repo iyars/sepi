@@ -1,0 +1,170 @@
+<section class="p-b-20" >
+    <div class="page-header">
+        <h1><i class="md md-insert-chart"></i> Datos personales</h1>
+        <p class="lead">TODOS los campos son obligatorios</p>
+    </div>
+    <div class="forms-advanced row m-b-40" id="datepickers">
+            <form class="form-floating" name="formulario" ng-submit="rd.guardarDatos()" novalidate="novalidate">
+                <fieldset>
+                <div class="col-md-6">
+                    <div class="well white">
+
+                            <div class="form-group">
+                                <label class="control-label" for="curp">CURP* </label>
+                                <input type="text" class="form-control" name="curp" id="curp" ng-model="rd.curp" maxlength="18" value="{{rd.curp}}" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"  required="required">
+                            </div>
+                            <div>
+                                <div class="form-group">
+                                    <label class="control-label" for="nombre">Nombre (s)* </label>
+                                    <input type="text" class="form-control"   name="nombre" id="nombre" ng-model="rd.nombre" value="{{nom.nombres | uppercase }}"   required="required">
+                                </div ng-show="!rd.curp ">
+                                <div class="form-group">
+                                    <label class="control-label" for="apellidoPaterno">Apellido Paterno* </label>
+                                    <input type="text" class="form-control" " name="apellidoPaterno" ng-model="rd.apellidoPaterno" id="apellidoPaterno" value="{{nom.apellidoP | uppercase}}"  required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="apellidoMaterno">Apellido Materno* </label>
+                                    <input type="text" class="form-control" name="apellidoMaterno" ng-model="rd.apellidoMaterno" id="apellidoMaterno" value="{{nom.apellidoM | uppercase}}"  required="required">
+                                </div>
+                                <div class="form-group filled">
+                                    <label class="control-label" for="sexo">sexo* </label>
+                                    <input type="text" class="form-control" ng-model="rd.sexo"  name="sexo" id="sexo" value="{{nom.sexo | uppercase}}"  required="required">
+                                </div>
+                                <div class="form-group filled">
+                                    <label class="control-label" for="edad">Edad* </label>
+                                    <input type="text" class="form-control" ng-model="rd.edad"  name="edad" id="edad"
+                                     value="{{nom.edad}}"  required="required">
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label class="control-label" for="rfc">RFC* </label>
+                                <input type="text" class="form-control" name="rfc" id="rfc" maxlength="13" ng-model="rd.rfc" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" required="required">
+                            </div>
+                            <div class="form-group filled">
+                                <label class="control-label" for="estadoCivil">Estado civil *</label>
+                                <select class="form-control" id="estadoCivil" name="estadoCivil"
+                                ng-model="rd.estadoCivil" required="required">
+                                    <option value="">Selecciona</option>
+                                    <option ng-repeat="estadoCivil in rd.estadoCivilCat" value="{{estadoCivil.idEstadoCivil}}">{{estadoCivil.descEstadoCivil | uppercase}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group " >
+                                <label class="control-label" for="telRecidencial">Teléfono residencial </label>
+                                <input type="tel" name="telRecidencial" id="telRecidencial" ng-model="rd.telRecidencial"  maxlength="10" class="form-control"  ng-model=" ..telRecidencial">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="telCelular">Teléfono celular </label>
+                                <input type="tel" class="form-control" name="telCelular" id="telCelular" ng-model="rd.telCelular"  maxlength="13">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="telRecados">Teléfono de recados </label>
+                                <input type="tel" class="form-control" name="telRecados" id="telRecados" ng-model="rd.telRecados"  maxlength="10">
+                            </div>
+                            <div class="form-group" ng-show="rd.telVacios">
+                                <p class="text-danger">Debes ingresar al menos un télefono</p>
+                            </div>
+                             <div class="form-group">
+                                <label class="control-label" for="password">Ingresa una contraseña </label>
+                                <input type="password" class="form-control" name="password" id="password" minlength="6" ng-model="rd.password" required="required">
+                            </div>
+                             <div class="form-group">
+                                <label class="control-label" for="passwordConfirmar">Confirma tu contraseña</label>
+                                <input type="password" class="form-control" name="passwordConfirmar" id="passwordConfirmar" minlength="6" ng-model="rd.passwordConfirmar" required="required">
+                                 <p class="text-danger" ng-show="rd.errorPassword">La contraseña no coincide</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="emailAlterno">Email alterno *</label>
+                                <input type="email" ng-click="rd.validarCampos()" class="form-control" name="emailAlterno" id="emailAlterno" ng-model="rd.emailAlterno"  required="required">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="emailConfirmacion">Confirmar email alterno *</label>
+                                <input type="email" class="form-control" name="emailConfirmacion" id="emailConfirmacion" ng-model="rd.emailConfirmacion" required="required">
+                                <p class="text-danger" ng-show="rd.errorEmail">El correo no coincide</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="well white">
+                        
+                            <legend>
+                                Domicilio
+                            </legend>
+                            <div class="form-group filled">
+                                <label class="control-label" for="vialidad">Tipo de vialidad *</label>
+                                <select class="form-control" ng-click="rd.validarCampos()" name="vialidad" id="vialidad" ng-model="rd.vialidad" required="required">
+                                    <option value="">Selecciona</option>
+                                    <option ng-repeat="via in rd.vialidadCat" value="{{via.idVialidad}}">{{via.tipoVialidad | uppercase}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="nomVialidad" class="control-label">Nombre de la vialidad *</label>
+                                <input class="form-control" type="text" name="nomVialidad" id="nomVialidad" ng-model="rd.nomVialidad" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="numExterior" class="control-label">Número exterior </label>
+                                <input class="form-control" type="number" name="numExterior" id="numExterior" ng-model="rd.numExterior">
+                            </div>
+                            <div class="form-group">
+                                <label for="numInterior" class="control-label">Número interior</label>
+                                <input class="form-control" type="number" name="numInterior" id="numInterior" ng-model="rd.numInterior">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="entreVialidad" class="control-label">Entre vialidad</label>
+                                        <input class="form-control" type="text" name="entreVialidad" id="entreVialidad" ng-model="rd.entreVialidad" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="yVialidad" class="control-label">Y la vialidad</label>
+                                        <input class="form-control" type="text" name="yVialidad" id="yVialidad" ng-model="rd.yVialidad" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group filled" >
+                                <label for="codigoPostal" class="control-label">Código postal *</label>
+                                <select class="form-control" name="codigoPostal" id="codigoPostal" ng-model="rd.codigoPostal" required="required">
+                                    <option value="">Selecciona</option>
+                                    <option selected="selected"  ng-repeat="j in rd.loCat | filter:rd.localidad" value="{{j.codigoPostal}}" >{{j.codigoPostal}}</option>
+                                </select>
+                            </div>
+                             <div class="form-group filled">
+                                <label class="control-label" for="entidad">Entidad *</label>
+                                <select  class="form-control"   ng-click="rd.buscarM()" id="entidad" name="entidad" ng-model="rd.entidad" required="required">
+                                    <option value="">Selecciona</option>
+                                    <option ng-repeat="entidad in rd.estadosCat" value="{{entidad.idEstado}}" >{{entidad.nombreEstado | uppercase }}</option>
+                                </select>
+                            </div>
+                            <div ng-show="rd.entidad != null">
+                                <div class="form-group filled">
+                                    <label class="control-label" for="municipio">Municipio / Delegación *</label>
+                                    <select class="form-control" id="municipio" ng-click="rd.buscarL()" name="municipio" ng-model="rd.municipio" required="required">
+                                        <option value="">Selecciona</option>
+                                        <option ng-repeat="m in rd.munCat" value="{{m.idMunicipio}}">{{m.nombreMunicipio}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group filled">
+                                    <label class="control-label" for="colonia">Colonia *</label>
+                                    <input class="form-control" id="colonia" name="colonia" ng-model="rd.colonia" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" required="required">
+                                </div>
+                                <div class="form-group filled">
+                                    <label class="control-label" for="localidad">Localidad *</label>
+                                    <select class="form-control" id="localidad" name="localidad" ng-model="rd.localidad" required="required">
+                                        <option value="">Selecciona</option>
+                                        <option ng-repeat="lo in rd.loCat" value="{{lo.idLocalidad}}">{{lo.nombreLocalidad}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-cloak>
+                            <a ui-sref="/"><button  class="btn btn-default">Cancelar</button></a>
+                            <input type="submit" class="btn btn-primary" value="Siguiente">
+                            </div>
+                        
+                    </div>
+                </div>
+                </fieldset>
+            </form>
+    </div>
+</section>

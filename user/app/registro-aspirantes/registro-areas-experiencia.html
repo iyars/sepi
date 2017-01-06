@@ -1,0 +1,65 @@
+<section class="p-b-20" >
+    <div class="page-header">
+        <h1>
+              <i class="md md-insert-chart"></i> Áreas de experiencia
+            </h1>
+        <p class="lead">TODOS los campos son obligatorios</p>
+    </div>
+    <div class="forms-advanced row m-b-40">
+        <div class="col-md-12">
+            <div class="well white">
+                <div class="datatables">
+                    <table class="table table-full table-full-small" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Área</th>
+                                <th class="text-center">Cuento con ella</th>
+                            </tr>
+                        </thead>
+                        <form name="formAreasExp">
+                            <tbody>
+                                <tr>
+                                    <td>Sin Experiencia</td>
+                                    <td class="text-center">
+                                        <div class="switch">
+                                        <small>No</small>
+                                            <label class="filled">
+                                                <input name="desactivarExp" type="checkbox" value="0" ng-model="regAreCtrl.desactivarExp" ng-click="regAreCtrl.desactivar()">
+                                                <span class="lever"></span>
+                                            </label>
+                                            <small>Si</small>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr ng-repeat="experiencia in regAreCtrl.areasExperiencia">
+                                    <td>{{ experiencia.descAreaExpe }}</td>
+                                    <td class="text-center">
+                                        <div class="switch">
+                                        <small>No</small>
+                                            <label class="filled">
+                                                <input ng-model="experiencia.activada" ng-disabled="regAreCtrl.desactivarExp" type="checkbox"  value="{{experiencia.idAreaExpe}}">
+                                                <span class="lever"></span>
+                                            </label>
+                                            <small>Si</small>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </form>
+                    </table>
+                </div>
+
+                <div class="form-group p-t-20 text-right" ng-cloak>
+                   <button type="reset" class="btn btn-default">Anterior</button>
+                    <button ng-click="regAreCtrl.guardar()"  ng-disabled="formAreasExp.$invalid" type="submit" class="btn btn-primary">Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<div class="alert-container-top-right">
+
+</div>

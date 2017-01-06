@@ -1,0 +1,25 @@
+<aside class="sidebar fixed">
+    <div class="brand-logo grey lighten-3">
+        <div id="logo">
+            <img src="assets/img/SEPI-logo.png" alt="SEPI" class="img-responsive">
+        </div>
+    </div>
+    <div class="user-logged-in p-20">
+        <div class="content">
+            <div class="user-name">Johnny Appleseed</div>
+            <div class="user-email">jappleseed@sepi.com</div>
+        </div>
+    </div>
+    <ul class="menu-links" ng-cloak>
+        <a menu-link href="#/" icon="md md-blur-on">Dashboard</a>
+        <li menu-toggle path="/Metas" name="Metas" icon="md md-photo">
+            <a menu-link href="#/metas/metas-asignar">Lista de empleados asignados</a>
+            <a menu-link href="#/metas/metas-seleccionar">Listado de metas</a>
+            <a menu-link href="#/metas/metas-crear">Creación de metas</a>
+            <a menu-link href="#/metas/metas-editar">Edición de metas</a>
+        </li>
+        <li menu-toggle path="/Convocatorias" name="Convocatorias" icon="md md-photo">
+            <a menu-link href="#/convocatorias/convocatorias-detalle">Detalle de convocatoria</a>
+        </li>
+    </ul>
+</aside>
