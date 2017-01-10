@@ -1,0 +1,143 @@
+<section class="p-b-20">
+    <div class="page-header">
+        <h1>
+              <i class="md md-insert-chart"></i> Búsqueda de personal
+            </h1>
+        <p class="lead">Escribe o elige en uno de los criterios de búsqueda</p>
+    </div>
+    <div class="forms-advanced row m-b-40" id="datepickers">
+        <div class="col-md-3">
+            <div class="well white">
+                <form class="form-floating">
+                    <fieldset>
+                        <legend>Buscar por...</legend>
+                        <div class="form-group">
+                            <label for="inputEmail" class="control-label">Nombre</label>
+                            <input class="form-control" type="text" ng-model="cbc.nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail" class="control-label">Apellido Paterno</label>
+                            <input class="form-control" type="text" ng-model="cbc.paterno">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail" class="control-label">Apellido Materno</label>
+                            <input class="form-control" type="text" ng-model="cbc.materno">
+                        </div>
+                        <div class="form-group filled p-b-10">
+                            <label class="control-label" style="position: inherit;">Puesto</label>
+                            <select class="form-control" ng-model="cbc.puesto" ng-options="puesto.idPuesto as puesto.puesto for puesto in cbc.listaPuestos">
+                                <option value="">Selecciona</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label normal">Fecha de ingreso</label>
+                            <div class="radio-inline">
+                                <label class="filled">
+                                    <input name="optionsRadios" id="optionsRadios1" ng-model="cbc.quincena" value="" type="radio"> Mes </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label class="filled">
+                                    <input name="optionsRadios" id="optionsRadios1" ng-model="cbc.quincena" value="01" type="radio"> Q1 </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label class="filled">
+                                    <input name="optionsRadios" id="optionsRadios1" ng-model="cbc.quincena" value="16" type="radio"> Q2 </label>
+                            </div>
+                        </div>
+                        <div class="form-group filled">
+                            <label class="control-label">Mes</label>
+                            <select class="form-control" ng-model="cbc.mes">
+                                <option value="">Selecciona</option>
+                                <option value="01">Enero</option>
+                                <option value="02">Febrero</option>
+                                <option value="03">Marzo</option>
+                                <option value="04">Abril</option>
+                                <option value="05">Mayo</option>
+                                <option value="06">Junio</option>
+                                <option value="07">Julio</option>
+                                <option value="08">Agosto</option>
+                                <option value="09">Septiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                            </select>
+                        </div>
+                        <div class="form-group filled">
+                            <label class="control-label">Año</label>
+                            <select class="form-control" ng-model="cbc.ano">
+                                <option value="">Selecciona</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                                <option value="2011">2011</option>
+                                <option value="2010">2010</option>
+                                <option value="2009">2009</option>
+                                <option value="2008">2008</option>
+                                <option value="2007">2007</option>
+                                <option value="2006">2006</option>
+                                <option value="2005">2005</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="reset" class="btn btn-default">Limpiar</button>
+                            <button type="submit" class="btn btn-primary">Buscar</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="well white">
+                <div class="datatables">
+                    <table class="table table-full table-full-small" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="text-center">N° Empleado</th>
+                                <th class="text-center">Nombre</th>
+                                <th class="text-center">Puesto</th>
+                                <th class="text-center">Fecha de ingreso</th>
+                                <th class="text-center">Asignar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">ID</td>
+                                <td class="text-center">Nombre Apellido Apellido</td>
+                                <td class="text-center">Puesto</td>
+                                <td class="text-center">11/22/33</td>
+                                <td class="text-center">
+                                    <div class="switch">
+                                        <label class="filled">
+                                            <input type="checkbox" name="agregarPersonal">
+                                            <span class="lever"></span>
+                                            <small>Asignar</small>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="form-group p-t-20 text-right">
+                    <div>
+                        <ul class="pager">
+                            <li>
+                                <button type="button" class="btn btn-default btn-flat-border grey lighten-2 pull-left">Anterior</button>
+                                <button type="button" class="btn btn-default btn-flat-border grey lighten-2 pull-right">Siguiente</button>
+                            </li>
+                            <li>
+                                <p class="pager-number">Mostrando del 1 al 10 de 50 resultados</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group p-t-20 text-right">
+                    <button type="reset" class="btn btn-default">Regresar</button>
+                    <button type="submit" class="btn btn-primary">Asignar personal seleccionado</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,168 @@
+<section class="p-b-20">
+    <div class="page-header">
+        <h1><i class="md md-insert-chart"></i> Detalle del empleado</h1>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-3 col-lg-push-9">
+    <h5>Instrucciones</h5>
+    <p>Bla bla bla</p>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-9 col-lg-pull-3">
+        <div class="well white">
+            <p>
+                <strong>N° de empleado:</strong>{{eic.empleado.idEmpleado}}
+                <br/><strong>Fecha de Ingreso:</strong> {{eic.empleado.fechaPrimerIngreso}}
+                <br/>
+                <strong>Puesto:</strong> {{eic.empleado.puestoInne}}
+                <br/>
+                <strong>Centro de Costo:</strong> {{eic.empleado.centroCosto}}
+                <br/>
+                <strong>Área:</strong> {{eic.empleado.areaAdscripcion}}
+                <br/>
+                <strong>Plaza:</strong> {{eic.empleado.idTipoPlaza}}
+                <br/>
+                <strong>Nivel:</strong> {{eic.empleado.nivel}}
+            </p>
+            <div class="row no-gutter p-v-20">
+                <h3 class="table-title p-10">Jefe asignado</h3>
+                <table class="table table-full table-full-small" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th class="text-center">N° Empleado</th>
+                            <th class="text-center">Nombre</th>
+                            <th class="text-center">Puesto</th>
+                            <th class="text-center">Fecha de ingreso</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">ID</td>
+                            <td class="text-center">Nombre Apellido Apellido</td>
+                            <td class="text-center">Puesto</td>
+                            <td class="text-center">11/22/33</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-success btn-flat-border" data-placement="bottom" title="Ver detalles"><i class="md md-visibility"></i></button>
+                                <button type="button" class="btn btn-sm btn-danger btn-flat-border" data-animation="am-fade-and-slide-top" data-template-url="app/metas/modal-eliminar-jefe.html" bs-modal="modal"><i class="md md-cancel"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pull-right">
+                    <a href="#/comunes/buscar-personal">
+                        <button class="btn btn-primary btn-border">Asignar Jefe</button>
+                    </a>
+                </div>
+            </div>
+            <div class="row no-gutter p-v-20">
+                <h3 class="table-title p-10">Subordinado(s) asignado(s)</h3>
+                <table class="table table-full table-full-small" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th class="text-center">N° Empleado</th>
+                            <th class="text-center">Nombre</th>
+                            <th class="text-center">Puesto</th>
+                            <th class="text-center">Fecha de ingreso</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">ID</td>
+                            <td class="text-center">Nombre Apellido Apellido</td>
+                            <td class="text-center">Puesto</td>
+                            <td class="text-center">11/22/33</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-success btn-flat-border" data-placement="bottom" title="Ver detalles"><i class="md md-visibility"></i></button>
+                                <button type="button" class="btn btn-sm btn-danger btn-flat-border" data-animation="am-fade-and-slide-top" data-template-url="app/metas/modal-eliminar-subordinado.html" bs-modal="modal"><i class="md md-cancel"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pull-right">
+                    <a href="#/comunes/buscar-personal">
+                        <button class="btn btn-primary btn-border">Agregar subordinado</button>
+                    </a>
+                </div>
+            </div>
+            <div class="row p-20">
+                <h3 class="table-title p-10">Metas asignadas</h3>
+            </div>
+            <table class="table table-hover table-full table-full-small">
+                <thead>
+                    <tr>
+                        <th class="text-center">Nombre de la meta</th>
+                        <th class="text-center">Tipo de meta</th>
+                        <th class="text-center">Ponderación</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Meta 1</td>
+                        <td>Tipo de meta 1</td>
+                        <td class="text-center">
+                            30%
+                        </td>
+                        <td class="text-center">
+                            <span class="label green">Aprobada</span>
+                        </td>
+                        <td class="text-center">
+                            <a href="#/metas/metas-detalle">
+                                <button class="btn btn-sm btn-success btn-flat-border" data-placement="bottom" title="Ver detalles"><i class="md md-visibility"></i></button>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Meta 1</td>
+                        <td>Tipo de meta 1</td>
+                        <td class="text-center">
+                            30%
+                        </td>
+                        <td class="text-center">
+                            <span class="label light-blue">En revisión</span>
+                        </td>
+                        <td class="text-center">
+                            <a href="#/metas/metas-detalle">
+                                <button class="btn btn-sm btn-success btn-flat-border" data-placement="bottom" title="Ver detalles"><i class="md md-visibility"></i></button>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Meta 1</td>
+                        <td>Tipo de meta 1</td>
+                        <td class="text-center">
+                            30%
+                        </td>
+                        <td class="text-center">
+                            <span class="label amber">Con comentarios</span>
+                        </td>
+                        <td class="text-center">
+                            <a href="#/metas/metas-detalle">
+                                <button class="btn btn-sm btn-success btn-flat-border" data-placement="bottom" title="Ver detalles"><i class="md md-visibility"></i></button>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Meta 1</td>
+                        <td>Tipo de meta 1</td>
+                        <td class="text-center">
+                            10%
+                        </td>
+                        <td class="text-center">
+                            <span class="label red">Cancelada</span>
+                        </td>
+                        <td class="text-center">
+                            <a href="#/metas/metas-detalle">
+                                <button class="btn btn-sm btn-success btn-flat-border" data-placement="bottom" title="Ver detalles"><i class="md md-visibility"></i></button>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="form-group text-right p-t-10">
+                <button class="btn btn-primary btn-border">Terminar aprobación</button>
+            </div>
+        </div>
+    </div>
+</section>
