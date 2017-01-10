@@ -1,0 +1,138 @@
+<section class="p-b-20">
+    <div class="page-header">
+        <h1><i class="md md-insert-chart"></i> Detalle del empleado</h1>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-3 col-lg-push-9">
+    <h5>Instrucciones</h5>
+    <p>Bla bla bla</p>
+            <div class="well white">
+            <div>
+            <legend>Balance de  ponderación</legend>
+                <div class="card blue inee">
+                    <div class="card-content">
+                        <p class="balance-ponderacion-tabla text-center">98%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-action clearfix p-t-20 text-center">
+                <div class="row checkbox-inline">
+                    <label class="texto-justificado">
+                        <input type="checkbox"> Estoy seguro de haber terminado de configurar las metas
+                    </label>
+                </div>
+                <div class="ro p-t-15">
+                    <button type="submit" class="btn btn-primary">Terminar configuración</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-9 col-lg-pull-3">
+        <div class="well white">
+            <p>
+                <strong>N° de empleado:</strong>{{eic.empleado.idEmpleado}}
+                <br/><strong>Fecha de Ingreso:</strong> {{eic.empleado.fechaPrimerIngreso}}
+                <br/>
+                <strong>Puesto:</strong> {{eic.empleado.puestoInne}}
+                <br/>
+                <strong>Centro de Costo:</strong> {{eic.empleado.centroCosto}}
+                <br/>
+                <strong>Área:</strong> {{eic.empleado.areaAdscripcion}}
+                <br/>
+                <strong>Plaza:</strong> {{eic.empleado.idTipoPlaza}}
+                <br/>
+                <strong>Nivel:</strong> {{eic.empleado.nivel}}
+                <br/>
+                <strong>Estado del periodo:</strong> {{eic.empleado.nivel}}
+            </p>
+            <div class="row p-20">
+                <h3 class="table-title p-10">Metas asignadas</h3>
+            </div>
+            <form class="form-floating">
+                <fieldset>
+                    <div class="row p-20">
+                        <!--<h3 class="table-title p-10">Metas creadas</h3>-->
+                    </div>
+                    <table class="table table-hover table-full table-full-small">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Nombre de la meta</th>
+                                <th class="text-center">Tipo de meta</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">Ponderación</th>
+                                <th class="text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                <td>Tipo de meta 1</td>
+                                <td class="text-center">
+                                    <span class="label green">Aprobada</span>
+                                </td>
+                                <td class="text-center">
+                                    <div class="form-group">
+                                        <input class="form-control" type="number" min="0" max="100">
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#/metas/metas-detalle"><button class="btn btn-sm btn-success btn-flat-border" data-placement="bottom" title="Ver detalles"><i class="md md-visibility"></i></button></a>
+                                    <button type="button" class="btn btn-sm btn-danger btn-flat-border" data-animation="am-fade-and-slide-top" data-template-url="app/metas/modal-cancelar.html" bs-modal="modal"><i class="md md-cancel"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                <td>Tipo de meta 1</td>
+                                <td class="text-center">
+                                    <span class="label light-blue">En revisión</span>
+                                </td>
+                                <td class="text-center">
+                                    <div class="form-group">
+                                        <input class="form-control" type="number" min="0" max="100">
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#/metas/metas-editar"><button class="btn btn-sm btn-info btn-flat-border" data-placement="bottom" title="Editar meta"><i class="md md-edit"></i></button></a>
+                                    <button type="button" class="btn btn-sm btn-danger btn-flat-border" data-animation="am-fade-and-slide-top" data-template-url="app/metas/modal-eliminar.html" bs-modal="modal"><i class="md md-delete"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                <td>Tipo de meta 1</td>
+                                <td class="text-center">
+                                    <span class="label amber">Con comentarios</span>
+                                </td>
+                                <td class="text-center">
+                                    <div class="form-group">
+                                        <input class="form-control" type="number" min="0" max="100">
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#/metas/metas-editar"><button class="btn btn-sm btn-info btn-flat-border" data-placement="bottom" title="Editar meta"><i class="md md-edit"></i></button></a>
+                                    <button type="button" class="btn btn-sm btn-danger btn-flat-border" data-animation="am-fade-and-slide-top" data-template-url="app/metas/modal-eliminar.html" bs-modal="modal"><i class="md md-delete"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                <td>Tipo de meta 1</td>
+                                <td class="text-center">
+                                    <span class="label red">Cancelada</span>
+                                </td>
+                                <td class="text-center">
+                                    <div class="form-group">
+                                        <input class="form-control" type="number" min="0" max="100">
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#/metas/metas-detalle"><button class="btn btn-sm btn-success btn-flat-border" data-placement="bottom" title="Ver detalles"><i class="md md-visibility"></i></button></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </form>
+            <div class="form-group text-right p-t-10">
+                <button class="btn btn-primary btn-border">Agregar meta</button>
+            </div>
+        </div>
+    </div>
+</section>
